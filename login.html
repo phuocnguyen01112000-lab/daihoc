@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập / Đăng Ký – Đại Học ABC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+    <style>
+        body {
+            background: #f3f8ff;
+        }
+        .auth-box {
+            max-width: 450px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.15);
+        }
+        .auth-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 26px;
+        }
+        .switch {
+            cursor: pointer;
+            color: #0d6efd;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="auth-box">
+        <div class="auth-title">Đăng Nhập / Đăng Ký</div>
+
+        <!-- LOGIN -->
+        <div id="loginBox">
+            <h5 class="mb-3 text-primary">Đăng nhập</h5>
+
+            <input id="loginUser" type="text" class="form-control mb-3" placeholder="Tên đăng nhập">
+            <input id="loginPass" type="password" class="form-control mb-3" placeholder="Mật khẩu">
+
+            <button id="loginBtn" class="btn btn-primary w-100 mb-3">Đăng nhập</button>
+
+            <p class="text-center">
+                Chưa có tài khoản? 
+                <span class="switch" id="showRegister">Đăng ký ngay</span>
+            </p>
+
+            <p class="text-center">
+                Quên mật khẩu?  
+                <span class="switch" id="showChangePass">Đổi mật khẩu</span>
+            </p>
+        </div>
+
+        <!-- REGISTER -->
+        <div id="registerBox" style="display: none;">
+            <h5 class="mb-3 text-success">Đăng ký tài khoản</h5>
+
+            <input id="regUser" type="text" class="form-control mb-3" placeholder="Tên đăng nhập">
+            <input id="regPass" type="password" class="form-control mb-3" placeholder="Mật khẩu">
+            <input id="regPass2" type="password" class="form-control mb-3" placeholder="Nhập lại mật khẩu">
+
+            <button id="registerBtn" class="btn btn-success w-100 mb-3">Đăng ký</button>
+
+            <p class="text-center">
+                Đã có tài khoản? 
+                <span class="switch" id="showLogin">Đăng nhập</span>
+            </p>
+        </div>
+
+        <!-- CHANGE PASSWORD -->
+        <div id="changePassBox" style="display:none;">
+            <h5 class="mb-3 text-warning">Đổi mật khẩu</h5>
+
+            <input id="oldPass" type="password" class="form-control mb-3" placeholder="Mật khẩu cũ">
+            <input id="newPass" type="password" class="form-control mb-3" placeholder="Mật khẩu mới">
+            <input id="newPass2" type="password" class="form-control mb-3" placeholder="Nhập lại mật khẩu mới">
+
+            <button id="changePassBtn" class="btn btn-warning w-100 mb-3">Đổi mật khẩu</button>
+
+            <p class="text-center">
+                Quay lại  
+                <span class="switch" id="backLogin">Đăng nhập</span>
+            </p>
+        </div>
+    </div>
+
+    <div id="dialog" style="display:none;"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function showDialog(message) {
+            $("#dialog").html(message).dialog({
+                title: "Thông báo",
+                modal: true,
+                buttons: { OK: () => $("#dialog").dialog("close") }
+            });
+        }
+
+        /* ----- Chuyển tab ----- */
+        $("#showRegister").click(() => {
+            $("#loginBox").hide();
+            $("#registerBox").fadeIn();
+        });
+        $("#showLogin").click(() => {
+            $("#registerBox").hide();
+            $("#changePassBox").hide();
+            $("#loginBox").fadeIn();
+        });
+        $("#showChangePass").click(() => {
+            $("#loginBox").hide();
+            $("#changePassBox").fadeIn();
+        });
+        $("#backLogin").click(() => {
+            $("#changePassBox").hide();
+            $("#loginBox").fadeIn();
+        });
+
+        /* ----- Đăng ký ----- */
+        $("#registerBtn").click(function () {
+            let user = $("#regUser").val().trim();
+            let pass = $("#regPass").val();
+            let pass2 = $("#regPass2").val();
+
+            if (!user || !pass) return showDialog("Vui lòng nhập đầy đủ thông tin.");
+            if (pass !== pass2) return showDialog("Mật khẩu nhập lại không khớp!");
+
+            localStorage.setItem("username", user);
+            localStorage.setItem("password", pass);
+
+            showDialog("Đăng ký thành công!");
+
+            $("#registerBox").hide();
+            $("#loginBox").fadeIn();
+        });
+
+        /* ----- Đăng nhập ----- */
+        $("#loginBtn").click(function () {
+            let user = $("#loginUser").val();
+            let pass = $("#loginPass").val();
+
+            let savedUser = localStorage.getItem("username");
+            let savedPass = localStorage.getItem("password");
+
+            if (user === savedUser && pass === savedPass) {
+                showDialog("Đăng nhập thành công! Đang chuyển hướng...");
+                setTimeout(() => {
+                    window.location.href = "home.html";
+                }, 1500);
+            } else {
+                showDialog("Sai tài khoản hoặc mật khẩu!");
+            }
+        });
+
+        /* ----- Đổi mật khẩu ----- */
+        $("#changePassBtn").click(function () {
+            let oldPass = $("#oldPass").val();
+            let newPass = $("#newPass").val();
+            let newPass2 = $("#newPass2").val();
+
+            let savedPass = localStorage.getItem("password");
+
+            if (oldPass !== savedPass)
+                return showDialog("Mật khẩu cũ không đúng!");
+
+            if (newPass !== newPass2)
+                return showDialog("Mật khẩu mới nhập lại không khớp!");
+
+            if (newPass.length < 3)
+                return showDialog("Mật khẩu mới phải có ít nhất 3 ký tự!");
+
+            localStorage.setItem("password", newPass);
+            showDialog("Đổi mật khẩu thành công!");
+
+            $("#changePassBox").hide();
+            $("#loginBox").fadeIn();
+        });
+    </script>
+
+</body>
+</html>

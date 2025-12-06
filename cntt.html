@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngành Công nghệ Thông tin – HCMUE</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    <!-- jQuery + jQueryUI -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+    <style>
+        body { font-family: Arial; }
+        header { background: #0d6efd; color: white; padding: 40px 0; }
+        .section-title { color: #0d6efd; }
+    </style>
+</head>
+
+<body>
+
+<header class="text-center">
+    <h1>Ngành Công nghệ Thông tin</h1>
+    <p>Trường Đại học Sư phạm TP. Hồ Chí Minh</p>
+</header>
+
+<div class="container py-5">
+
+    <!-- Giới thiệu -->
+    <section id="gioi-thieu" class="mb-5">
+        <h2 class="section-title mb-3">📌 Giới thiệu ngành</h2>
+        <p>
+            Ngành Công nghệ Thông tin tại Đại học Sư phạm TP.HCM đào tạo sinh viên có kiến thức vững 
+            về lập trình, hệ thống thông tin, mạng máy tính, đồng thời có khả năng giảng dạy CNTT trong môi trường giáo dục.
+        </p>
+    </section>
+
+    <!-- Môi trường học tập và Cơ sở vật chất -->
+    <section id="moi-truong" class="mb-5">
+        <h2 class="section-title mb-3">🏫 Môi trường học tập & Cơ sở vật chất</h2>
+
+        <div id="accordion-cntt">
+            <h3>Môi trường học tập</h3>
+            <div>
+                <p>
+                    Sinh viên học trong môi trường thân thiện, năng động với nhiều hoạt động nghiên cứu khoa học, câu lạc bộ lập trình, 
+                    robotics và các cuộc thi học thuật.
+                </p>
+            </div>
+
+            <h3>Cơ sở vật chất</h3>
+            <div>
+                <ul>
+                    <li>Phòng máy tính hiện đại, cấu hình mạnh</li>
+                    <li>Hệ thống mạng tốc độ cao</li>
+                    <li>Thư viện điện tử và kho tài liệu CNTT</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    $(function () {
+        $("#accordion-cntt").accordion({
+            heightStyle: "content"
+        });
+    });
+</script>
+
+</body>
+</html>

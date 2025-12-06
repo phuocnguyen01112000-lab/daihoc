@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sư phạm Toán – HCMUE</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+    <style>
+        header { background: #198754; color: white; padding: 40px 0; }
+        .section-title { color: #198754; }
+    </style>
+</head>
+
+<body>
+
+<header class="text-center">
+    <h1>Ngành Sư phạm Toán</h1>
+    <p>Trường Đại học Sư phạm TP. Hồ Chí Minh</p>
+</header>
+
+<div class="container py-5">
+
+    <!-- Giới thiệu -->
+    <section class="mb-5">
+        <h2 class="section-title mb-3">📌 Giới thiệu ngành</h2>
+        <p>
+            Ngành Sư phạm Toán đào tạo giáo viên Toán có khả năng giảng dạy từ THCS đến THPT, 
+            đồng thời phát triển tư duy logic, phân tích và nghiên cứu.
+        </p>
+    </section>
+
+    <!-- Môi trường học tập & Cơ sở vật chất -->
+    <section class="mb-5">
+        <h2 class="section-title mb-3">🏫 Môi trường học tập & Cơ sở vật chất</h2>
+
+        <div id="accordion-toan">
+            <h3>Môi trường học tập</h3>
+            <div>
+                <p>
+                    Sinh viên được học với giảng viên có chuyên môn sâu, tham gia các hội thảo, câu lạc bộ toán học, 
+                    seminar chuyên ngành.
+                </p>
+            </div>
+
+            <h3>Cơ sở vật chất</h3>
+            <div>
+                <ul>
+                    <li>Phòng học được trang bị đầy đủ thiết bị hiện đại</li>
+                    <li>Thư viện toán học phong phú</li>
+                    <li>Khu tự học yên tĩnh, rộng rãi</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    $(function () {
+        $("#accordion-toan").accordion({
+            heightStyle: "content"
+        });
+    });
+</script>
+
+</body>
+</html>

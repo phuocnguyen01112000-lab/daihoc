@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đại Học – Trang Chủ</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <style>
+        .banner {
+            height: 90vh;
+            padding: 120px 0;
+            color: white;
+            text-shadow: 1px 1px 5px black;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(to bottom right, rgba(0,40,120,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1') center/cover;
+        }
+        .banner-content{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(-50%); }
+        }
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .scrolled{
+            background-color: #ffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+<script>
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 60) {
+            $('nav').addClass('scrolled');
+        } else {
+            $('nav').removeClass('scrolled');
+        }
+    });
+</script>
+</head>
+<!--thanh điều hướng-->
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><img src="img/logo.png" alt="Đại Học Sư phạm Thành phố Hồ Chí Minh" style="height:40px; margin-right:10px;">HCMUE</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-semibold">
+                    <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tuyensinh.html">Tuyển sinh</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tintuc.html">Tin tức-Sự kiện</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gioithieu.html">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Đăng nhập</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- banner chính -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1 class="display-4 fw-bold">Chào mừng đến với Đại Học Sư phạm Thành phố Hồ Chí Minh</h1>
+            <p class="lead">Nơi xây dựng tri thức – khởi tạo tương lai của bạn.</p>
+        </div>
+    </section>
+    <section class="container my-5">
+        <h2 class="section-title text-center">Giới thiệu trường</h2>
+        <p class="text-center fs-5">
+            Là một trong 22 trường đại học trọng điểm quốc gia, Đại Học Sư phạm Thành phố Hồ Chí Minh (HCMUE) tự hào là nơi đào tạo nguồn nhân lực chất lượng cao cho ngành giáo dục và các lĩnh vực khoa học khác. Với đội ngũ giảng viên giàu kinh nghiệm, chương trình đào tạo tiên tiến và môi trường học tập hiện đại, HCMUE cam kết mang đến cho sinh viên những trải nghiệm học tập tốt nhất, giúp họ phát triển toàn diện cả về kiến thức lẫn kỹ năng.
+        </p>
+    </section>
+    <!-- ngành đào tạo -->
+    <section class="container my-5">
+        <h2 class="section-title text-center">Ngành đào tạo nổi bật</h2>
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="card shadow h-100">
+                        <img src="img/cntt.png" class="card-img-top">
+                    <div class="card-body">
+                    <h5 class="card-title fw-bold">Công Nghệ Thông Tin</h5>
+                    <p class="card-text">Đào tạo kỹ sư IT theo chuẩn quốc tế, bám sát thực tế doanh nghiệp.</p>
+                    <a href="cntt.html" class="btn btn-primary">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow h-100">
+                <img src="img/suphamtoan.png" class="card-img-top" height="238px">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Sư Phạm Toán</h5>
+                    <p class="card-text">Đào tạo giáo viên Toán vững chuyên môn, tư duy logic và khả năng ứng dụng phương pháp giảng dạy hiện đại vào thực tiễn.</p>
+                    <a href="suphamtoan.html" class="btn btn-primary">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow h-100">
+                <img src="img/tienganh.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Sư phạm tiếng Anh</h5>
+                    <p class="card-text">Rèn luyện năng lực tiếng Anh toàn diện, kỹ năng giao tiếp – biên phiên dịch và kiến thức văn hoá phục vụ học tập, giảng dạy và nghề nghiệp.</p>
+                    <a href="suphamtienganh.html" class="btn btn-primary">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </section>  
+    <!-- tin tức -->
+<section class="container my-5">
+    <h2 class="section-title text-center">Tin tức - Sự kiện nổi bật</h2>
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card shadow h-100 d-flex flex-column">
+                <img src="img/songnganh.jpg" class="card-img-top">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-bold">Đăng ký xét song ngành</h5>
+                    <p class="card-text">
+                        Chương trình học song ngành giúp sinh viên mở rộng kiến thức và tăng cơ hội nghề nghiệp trong tương lai.
+                    </p>
+                    <a href="songnganh.html" class="btn btn-primary mt-auto">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow h-100 d-flex flex-column">
+                <img src="img/tiepsuc.webp" class="card-img-top">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-bold">Tiếp sức mùa thi</h5>
+                    <p class="card-text">
+                        Hoạt động hỗ trợ thí sinh với đội ngũ tình nguyện viên năng động, đồng hành trong kỳ thi quan trọng.
+                    </p>
+                    <a href="tiepsuc.html" class="btn btn-primary mt-auto">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow h-100 d-flex flex-column">
+                <img src="img/ngoại ngữ.jpg" class="card-img-top">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-bold">Đăng ký ngoại ngữ tăng cường</h5>
+                    <p class="card-text">
+                        Khóa học ngoại ngữ chuyên sâu, giúp sinh viên nâng cao kỹ năng giao tiếp và tự tin hội nhập quốc tế.
+                    </p>
+                    <a href="nntc.html" class="btn btn-primary mt-auto">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <!-- FOOTER -->
+<footer class="bg-primary text-light pt-5 pb-3 mt-5 w-100">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 mb-4">
+                <h4 class="fw-bold mb-3">📍 Địa chỉ</h4>
+                <p class="mb-1"><strong>Cơ sở chính:</strong></p>
+                <p class="mb-2">280 An Dương Vương, Phường Chợ Quán, TP. Hồ Chí Minh</p>
+
+                <p class="mb-1"><strong>Các cơ sở khác:</strong></p>
+                <ul>
+                    <li>222 Lê Văn Sỹ, Quận 3, TP.HCM</li>
+                    <li>Phân hiệu Long An – Quốc lộ 1A</li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <h4 class="fw-bold mb-3">📞 Liên hệ</h4>
+                <p>Hotline: <strong>028 3835 2020</strong></p>
+                <p>Email: <strong>contact@hcmue.edu.vn</strong></p>
+                <p>Website: <strong>www.hcmue.edu.vn</strong></p>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <h4 class="fw-bold mb-3">🔗 Liên kết nhanh</h4>
+                <ul>
+                    <li>Thông tin tuyển sinh</li>
+                    <li>Tin tức – Sự kiện</li>
+                    <li>Giới thiệu</li>
+                    <li>Đăng nhập hệ thống</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="text-center border-top pt-3 mt-3">
+            © 2025 HCMUE – Đại Học Sư phạm TP. Hồ Chí Minh. All rights reserved.
+        </div>
+    </div>
+</footer>   
+</body>
+</html>

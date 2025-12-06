@@ -1,0 +1,155 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+header {
+  background-color: #0077cc;      
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+.logo-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: white;        
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.logo-box img {
+  width: 80px;                     
+  height: auto;
+  display: block;
+}
+
+.slogan {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffeb3b;
+}
+.students {
+  text-align: center;
+  padding: 20px;
+}
+.students img {
+  max-width: 300px;
+}
+.support {
+  background-color: #e3f2fd;
+  padding: 20px;
+  text-align: center;
+}
+.support ul {
+  list-style: none;
+  padding: 0;
+}
+.support li {
+  margin: 10px 0;
+}
+.form {
+  padding: 20px;
+  text-align: center;
+}
+form input, form textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+form button {
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+form button:hover {
+  background-color: #005fa3;
+}
+footer {
+  background-color: #0077cc;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+.map {
+  background-color: #e3f2fd;
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.map h2 {
+  margin-bottom: 15px;
+  color: #0077cc;
+}
+
+.map-description {
+  margin-top: 10px;
+  font-style: italic;
+  color: #555;
+}
+.faq {
+  background-color: #e8f0fe;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.faq h2 {
+  text-align: center;
+  color: #0057b7;
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-question {
+  width: 100%;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+  background-color: #005fa3;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-left: 4px solid #0077cc;
+  padding: 0 20px;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+  margin: 10px 0;
+}
+
+/* Khi faq-item mở */
+.faq-item.active .faq-answer {
+  max-height: 200px; /* hoặc auto nếu nội dung ngắn */
+  padding: 10px 20px;
+}

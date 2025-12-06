@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tiếp Sức Mùa Thi 2025</title>
+  <link rel="stylesheet" href="sukien.css">
+</head>
+<body>
+  <header>
+   <div class="logo-box">
+    <a href="index.html">
+  <img src="img/logodaihoc.png" alt="Logo Đại học Sư phạm TP.HCM">
+</a>
+</div>
+    <h1>TIẾP SỨC MÙA THI 2025</h1>
+    <p class="slogan">CÙNG NHAU VƯỢT QUA MÙA THI</p>
+  </header>
+  <section class="students">
+    <img src="img/student.png" alt="Sinh viên cổ vũ" />
+  </section>
+  <section class="support">
+    <h2>Hỗ trợ thí sinh bởi sinh viên tình nguyện</h2>
+    <ul>
+      <li>Phát nước miễn phí</li>
+      <li>Hướng dẫn đường đi</li>
+      <li>Hỗ trợ chỗ ở</li>
+    </ul>
+  </section>
+  <section class="form">
+    <h2>Đăng ký hỗ trợ</h2>
+    <form>
+      <input type="text" placeholder="Họ và tên" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Nội dung cần hỗ trợ" rows="4"></textarea>
+      <button type="submit">Gửi</button>
+    </form>
+  </section>
+  <footer>
+    <p>&copy; 2025 Trường Đại học Sư phạm TP.HCM  </p>
+  </footer>
+  <script>
+  const form = document.querySelector('form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = form.querySelector('input[type="text"]').value;
+    const email = form.querySelector('input[type="email"]').value;
+    const message = form.querySelector('textarea').value;
+    if (!name || !email || !message) {
+      alert('Vui lòng điền đầy đủ thông tin!');
+    } else {
+      alert(`Cảm ơn ${name}! Chúng tôi đã nhận được thông tin hỗ trợ của bạn.`);
+      form.reset(); 
+    }
+  });
+</script>
+<section class="map">
+  <h2>Bản đồ vị trí hỗ trợ</h2>
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.766257064116!2d106.65873731526928!3d10.767935392322636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4d3d1ff6bd%3A0x6bcae38241697d9!2zVMOibiBI4buFIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1701815152000!5m2!1svi!2s" 
+    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <p class="map-description">
+    Vị trí Trường Đại học Sư phạm TP.HCM trên bản đồ. Địa chỉ: 280 An Dương Vương, Quận 5, TP. Hồ Chí Minh.
+  </p>
+</section>
+<section class="faq">
+  <h2>FAQ - Câu hỏi thường gặp</h2>
+  <div class="faq-item">
+    <button class="faq-question">1. Tôi có thể đăng ký hỗ trợ như thế nào?</button>
+    <div class="faq-answer">
+      <p>Bạn vui lòng điền đầy đủ thông tin vào form “Đăng ký hỗ trợ” ở phía dưới và nhấn nút Gửi.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">2. Tôi được hỗ trợ những gì khi tham gia?</button>
+    <div class="faq-answer">
+      <p>Chúng tôi hỗ trợ phát nước miễn phí, hướng dẫn đường đi và hỗ trợ chỗ ở cho thí sinh.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">3. Thời gian hỗ trợ kéo dài bao lâu?</button>
+    <div class="faq-answer">
+      <p>Chương trình hỗ trợ kéo dài trong suốt mùa thi 2025, cụ thể từ ngày 1/6 đến 30/7.</p>
+    </div>
+  </div>
+</section>
+<script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.parentElement;
+      // Toggle class active để mở / đóng câu trả lời
+      faqItem.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+</html>
