@@ -14,25 +14,75 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
     <style>
-        body { font-family: Arial; }
-        header { background: #0d6efd; color: white; padding: 40px 0; }
-        .section-title { color: #0d6efd; }
+        body { 
+            font-family: "Segoe UI", Arial;
+            background: #f5f9ff;
+        }
+
+        header {
+            background: linear-gradient(120deg, #0d6efd, #4aa3ff);
+            color: white;
+            padding: 60px 0 70px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        header h1 { font-size: 40px; font-weight: 700; }
+        header p { font-size: 18px; opacity: 0.9; }
+
         .lui-ve {
             position: absolute;
             top: 20px; 
             left: 20px;
             color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 500;
+            font-size: 24px;
             padding: 6px 12px;
-            border-radius: 8px;
+            border-radius: 10px;
             transition: 0.2s;
         }
 
         .lui-ve:hover {
-            background: rgba(255, 255, 255, 0.2);
-            text-decoration: none;
+            background: rgba(255,255,255,0.25);
+        }
+
+        .section-title {
+            color: #0d6efd; 
+            font-weight: 700; 
+            border-left: 5px solid #0d6efd;
+            padding-left: 10px;
+        }
+
+        /* Card trắng nổi bật */
+        .card-white {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .card-white:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+        }
+
+        /* Accordion đẹp hơn */
+        #accordion-cntt h3 {
+            background: #e6f0ff;
+            color: #0d47a1;
+            padding: 12px;
+            font-size: 18px;
+        }
+
+        #accordion-cntt .ui-accordion-content {
+            background: white;
+            padding: 20px;
+        }
+
+        .icon-bullet {
+            color: #0d6efd;
+            font-weight: bold;
         }
     </style>
 
@@ -51,42 +101,95 @@
     <!-- Giới thiệu -->
     <section id="gioi-thieu" class="mb-5">
         <h2 class="section-title mb-3">📌 Giới thiệu ngành</h2>
-        <p>
-            Ngành Công nghệ Thông tin tại Đại học Sư phạm TP.HCM đào tạo sinh viên có kiến thức vững 
-            về lập trình, hệ thống thông tin, mạng máy tính, đồng thời có khả năng giảng dạy CNTT trong môi trường giáo dục.
-        </p>
+
+        <div class="card-white">
+            <p>
+                Ngành Công nghệ Thông tin tại Đại học Sư phạm TP.HCM cung cấp kiến thức nền tảng và chuyên sâu 
+                về lập trình, cơ sở dữ liệu, hệ thống thông tin, thiết kế phần mềm và giảng dạy CNTT. 
+                Sinh viên được định hướng theo hai mục tiêu: trở thành kỹ sư phần mềm chất lượng hoặc giáo viên CNTT chuyên nghiệp.
+            </p>
+        </div>
     </section>
 
-    <!-- Môi trường học tập và Cơ sở vật chất -->
+    <!-- Mục tiêu đào tạo -->
+    <section class="mb-5">
+        <h2 class="section-title mb-3">🎯 Mục tiêu đào tạo</h2>
+
+        <div class="card-white">
+            <ul>
+                <li>Đào tạo sinh viên có năng lực chuyên môn vững vàng về CNTT.</li>
+                <li>Đáp ứng yêu cầu làm việc trong doanh nghiệp phần mềm và môi trường giáo dục.</li>
+                <li>Hình thành kỹ năng nghiên cứu khoa học và giải quyết vấn đề thực tiễn.</li>
+                <li>Phát triển kỹ năng mềm: thuyết trình, teamwork, quản lý dự án, sư phạm.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Môi trường học tập + Cơ sở vật chất -->
     <section id="moi-truong" class="mb-5">
         <h2 class="section-title mb-3">🏫 Môi trường học tập & Cơ sở vật chất</h2>
 
-        <div id="accordion-cntt">
-            <h3>Môi trường học tập</h3>
-            <div>
-                <p>
-                    Sinh viên học trong môi trường thân thiện, năng động với nhiều hoạt động nghiên cứu khoa học, câu lạc bộ lập trình, 
-                    robotics và các cuộc thi học thuật.
-                </p>
-            </div>
+        <div class="card-white">
+            <div id="accordion-cntt">
+                <h3>Môi trường học tập</h3>
+                <div>
+                    <p>
+                        Sinh viên học tập trong môi trường năng động, sáng tạo với nhiều hoạt động học thuật, 
+                        cuộc thi lập trình, nghiên cứu khoa học và cộng đồng sinh viên mạnh.
+                    </p>
+                </div>
 
-            <h3>Cơ sở vật chất</h3>
-            <div>
-                <ul>
-                    <li>Phòng máy tính hiện đại, cấu hình mạnh</li>
-                    <li>Hệ thống mạng tốc độ cao</li>
-                    <li>Thư viện điện tử và kho tài liệu CNTT</li>
-                </ul>
+                <h3>Cơ sở vật chất</h3>
+                <div>
+                    <ul>
+                        <li>Phòng máy cấu hình mạnh, cập nhật thường xuyên.</li>
+                        <li>Hệ thống mạng và phòng LAB đạt chuẩn.</li>
+                        <li>Thư viện điện tử và kho tài liệu chuyên ngành phong phú.</li>
+                        <li>Hệ thống phòng học chất lượng cao, trang bị máy chiếu – điều hòa.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Kỹ năng đạt được -->
+    <section class="mb-5">
+        <h2 class="section-title mb-3">💡 Kỹ năng đạt được</h2>
+
+        <div class="card-white">
+            <ul>
+                <li>Kỹ năng lập trình: Java, C#, Python, Web (HTML – CSS – JS).</li>
+                <li>Thiết kế cơ sở dữ liệu và phân tích hệ thống.</li>
+                <li>Thiết kế giao diện, phát triển website và ứng dụng.</li>
+                <li>Kỹ năng giảng dạy CNTT và thiết kế bài giảng.</li>
+                <li>Kỹ năng thuyết trình, làm việc nhóm, tư duy logic.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Cơ hội nghề nghiệp -->
+    <section class="mb-5">
+        <h2 class="section-title mb-3">🚀 Cơ hội nghề nghiệp</h2>
+
+        <div class="card-white">
+            <ul>
+                <li>Giáo viên CNTT tại các trường THCS – THPT.</li>
+                <li>Lập trình viên Web / Mobile / Desktop.</li>
+                <li>Kỹ sư phần mềm, tester, QA.</li>
+                <li>Chuyên viên quản trị hệ thống, quản trị mạng.</li>
+                <li>Chuyên viên phân tích và thiết kế hệ thống.</li>
+                <li>Chuyên viên dữ liệu (Data Analyst).</li>
+            </ul>
+        </div>
+    </section>
 </div>
 
 <script>
     $(function () {
         $("#accordion-cntt").accordion({
-            heightStyle: "content"
+            heightStyle: "content",
+            collapsible: true,
+            active: false
         });
     });
 </script>
